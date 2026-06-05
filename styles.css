@@ -403,6 +403,10 @@ html,
         font-size: clamp(1.05rem, 2vw, 1.24rem);
       }
 
+      #tree-template .page-hero-content .button {
+        margin-top: 1.35rem;
+      }
+
       #tree-template .hero-bg {
         position: absolute;
         inset: 0;
@@ -657,6 +661,7 @@ html,
       #tree-template .page-content {
         display: grid;
         gap: 1.35rem;
+        min-width: 0;
       }
 
       #tree-template .page-content h2 {
@@ -681,9 +686,25 @@ html,
         font-size: 1.04rem;
       }
 
+      #tree-template .page-content h2,
+      #tree-template .page-content h3,
+      #tree-template .page-content p,
+      #tree-template .page-content li,
+      #tree-template .section-heading h2,
+      #tree-template .section-heading p,
+      #tree-template .seo-card h3,
+      #tree-template .seo-card p,
+      #tree-template .area-card h3,
+      #tree-template .area-card p,
+      #tree-template .guide-item h3,
+      #tree-template .guide-item p {
+        overflow-wrap: anywhere;
+      }
+
       #tree-template .detail-card,
       #tree-template .sidebar-card,
       #tree-template .seo-card {
+        min-width: 0;
         border: 1px solid var(--border);
         border-radius: var(--radius);
         background: #ffffff;
@@ -698,9 +719,11 @@ html,
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1rem;
+        min-width: 0;
       }
 
       #tree-template .guide-item {
+        min-width: 0;
         border-radius: 12px;
         background: var(--muted-bg);
         padding: 1rem;
@@ -742,6 +765,7 @@ html,
       }
 
       #tree-template .detail-list li {
+        min-width: 0;
         border-radius: 12px;
         background: var(--muted-bg);
         color: var(--foreground);
@@ -783,6 +807,7 @@ html,
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
+        min-width: 0;
       }
 
       #tree-template .seo-card {
@@ -807,6 +832,7 @@ html,
       #tree-template .area-card {
         display: grid;
         min-height: 210px;
+        min-width: 0;
         overflow: hidden;
         border-radius: var(--radius);
         background: var(--dark);
@@ -879,11 +905,14 @@ html,
         grid-template-columns: 1.2fr 0.8fr 0.8fr;
         grid-auto-rows: 245px;
         gap: 1rem;
+        min-width: 0;
       }
 
       #tree-template .gallery-card {
         position: relative;
         overflow: hidden;
+        margin: 0;
+        min-width: 0;
         border-radius: var(--radius);
         background: #dfe8dc;
         box-shadow: 0 16px 38px rgba(16, 33, 22, 0.09);
@@ -1398,7 +1427,6 @@ html,
         #tree-template .site-header.is-open .mobile-nav > :nth-child(6) { transition-delay: 195ms; }
         #tree-template .site-header.is-open .mobile-nav > :nth-child(7) { transition-delay: 225ms; }
         #tree-template .site-header.is-open .mobile-nav > :nth-child(8) { transition-delay: 255ms; }
-        }
 
         #tree-template .mobile-nav > a:not(.button) {
           font-size: 0.96rem;
@@ -1546,6 +1574,54 @@ html,
         }
       }
 
+      @media (max-width: 900px) {
+        #tree-template .page-hero {
+          min-height: auto;
+          padding-block: 5.75rem 2.9rem;
+        }
+
+        #tree-template .page-hero-content {
+          padding-top: 2rem;
+          padding-bottom: 1.1rem;
+        }
+
+        #tree-template .page-hero-content .button {
+          margin-top: 1.1rem;
+          margin-bottom: 0.45rem;
+        }
+
+        #tree-template .gallery-grid,
+        #tree-template .seo-grid,
+        #tree-template .area-grid,
+        #tree-template .guide-grid,
+        #tree-template .detail-list {
+          grid-template-columns: 1fr;
+        }
+
+        #tree-template .gallery-grid {
+          grid-auto-rows: auto;
+        }
+
+        #tree-template .gallery-card {
+          height: clamp(230px, 62vw, 340px);
+        }
+
+        #tree-template .gallery-card:first-child {
+          grid-row: auto;
+        }
+
+        #tree-template .cta-strip {
+          display: grid;
+          gap: 1.25rem;
+          margin-block: 0.75rem;
+        }
+
+        #tree-template .cta-strip .button {
+          justify-content: center;
+          width: 100%;
+        }
+      }
+
       @media (max-width: 740px) {
         #tree-template .container {
           width: min(100% - 2.25rem, 1180px);
@@ -1576,11 +1652,13 @@ html,
         }
 
         #tree-template .page-hero {
-          min-height: 66vh;
+          min-height: auto;
+          padding-block: 5.55rem 2.85rem;
         }
 
         #tree-template .page-hero-content {
-          padding-top: 6.6rem;
+          padding-top: 2rem;
+          padding-bottom: 1.2rem;
         }
 
         #tree-template .page-hero h1 {
@@ -1655,7 +1733,11 @@ html,
 
         #tree-template .gallery-grid {
           grid-template-columns: 1fr;
-          grid-auto-rows: 230px;
+          grid-auto-rows: auto;
+        }
+
+        #tree-template .gallery-card {
+          height: 230px;
         }
 
         #tree-template .gallery-card:first-child {
