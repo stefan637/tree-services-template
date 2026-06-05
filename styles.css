@@ -1591,6 +1591,9 @@ html,
         }
 
         #tree-template .gallery-grid,
+        #tree-template .service-grid,
+        #tree-template .process-grid,
+        #tree-template .review-grid,
         #tree-template .seo-grid,
         #tree-template .area-grid,
         #tree-template .guide-grid,
